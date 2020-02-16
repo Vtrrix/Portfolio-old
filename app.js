@@ -1,23 +1,46 @@
-const preload= document.querySelector('.preload');
+// const preload= document.querySelector('.preload');
 
 
 window.addEventListener("load", () => {
   window.scrollTo(0,0);
-  preload.style.height=0;
-  preload.style.width=0;
+  // preload.style.height=0;
+  // preload.style.width=0;
   
 })
-
+//side buttons
+let butt1 = document.querySelector(".butt1");
+let butt2 = document.querySelector(".butt2");
+let butt3 = document.querySelector(".butt3");
+let butt4 = document.querySelector(".butt4");
+let butt5 = document.querySelector(".butt5");
+let butt6 = document.querySelector(".butt6");
 
 let burger=document.querySelector(".burger");
 let line1=document.querySelector(".line1");
 let line2=document.querySelector(".line2");
 let line3=document.querySelector(".line3");
+let navbar = document.querySelector(".navbar");
+let flag_for_nav=false;//to know if the nav is open or close
+//flag=true is open 
 
 
 burger.addEventListener("click", ()=>{
-    
-  })
+  if(! flag_for_nav){
+    navbar.style.width='45%';
+    navbar.style.height='75%';
+    flag_for_nav=true;
+  }
+  else{
+    navbar.style.width='0';
+    navbar.style.height='0';
+    flag_for_nav=false;
+  }
+})
+burger.addEventListener("blur", ()=>{
+  navbar.style.width='0';
+  navbar.style.height='0';
+  flag_for_nav=false;
+})
 
 const slide = document.querySelector('.about');
 const little = document.querySelector('.little');
@@ -30,6 +53,7 @@ var window_width=window.innerWidth;
 
 
 const tl =new TimelineMax();
+tl.fromTo(butt,0.5,{height:"0"},{height:"100%", ease:Power2.easeInOut} );
 if(window_width >= 450)
 {
   tl.fromTo(slide,1.2,{x:"-100%"},{x:"-7.2%" , ease:Power2.easeInOut} )
@@ -138,7 +162,9 @@ t4.fromTo(submit,0.5,{height:"0"},{height:"100%", ease:Power2.easeInOut} );
 
 name.addEventListener("click",()=>{
   uname.style.top='0px';
-
+})
+name.addEventListener("",()=>{
+  uname.style.top='100px';
 })
 mail.addEventListener("click",()=>{
   umail.style.top='0px';
@@ -150,10 +176,9 @@ subject.addEventListener("click",()=>{
 })
 
 
-
 new ScrollMagic.Scene({
     triggerElement: slide,
-    triggerHook: 0.01
+    triggerHook: 0.25
   })
     .setTween(tl)
     .addIndicators({
@@ -165,7 +190,7 @@ new ScrollMagic.Scene({
     .addTo(ctrl);
 new ScrollMagic.Scene({
     triggerElement: skills,
-    triggerHook: 0.01
+    triggerHook: 0.25
   })
     .setTween(t2)
     .addIndicators({
@@ -178,7 +203,7 @@ new ScrollMagic.Scene({
 
 new ScrollMagic.Scene({
       triggerElement: Projects,
-      triggerHook: 0.01
+      triggerHook: 0.25
    })
     .setTween(t3)
     .addIndicators({
@@ -191,7 +216,7 @@ new ScrollMagic.Scene({
 
 new ScrollMagic.Scene({
       triggerElement: Contact,
-      triggerHook: 0.01
+      triggerHook: 0.25
     })
     .setTween(t4)
     .addIndicators({
@@ -204,12 +229,7 @@ new ScrollMagic.Scene({
 
 
 
-let butt1 = document.querySelector(".butt1");
-let butt2 = document.querySelector(".butt2");
-let butt3 = document.querySelector(".butt3");
-let butt4 = document.querySelector(".butt4");
-let butt5 = document.querySelector(".butt5");
-let butt6 = document.querySelector(".butt6");
+
 let active = document.querySelector(".active");
 
 
@@ -301,3 +321,27 @@ butt6.addEventListener("click", function(){
   cur_but_num = 6;
   this.style.backgroundColor = "white";
 })
+
+
+
+// let initScrollPos = window.pageYOffset;
+// let scrollOffset = 0;
+// window.addEventListener("scroll", function(){
+//   let scrollPosNow = window.pageYOffset;
+//   if(scrollPosNow > initScrollPos)
+//   {
+//     scrollOffset+=1;
+//     window.scrollTo({
+//       top: scrollOffset*window.innerHeight+1
+//     })
+//     initScrollPos = scrollOffset*window.innerHeight+1;
+//   }
+//   else{
+//     scrollOffset-=1;
+//     window.scrollTo({
+//       top: scrollOffset*window.innerHeight+1
+//     })
+//     initScrollPos = scrollOffset*window.innerHeight+1;
+//   }
+// });
+

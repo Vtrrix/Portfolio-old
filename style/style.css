@@ -3,46 +3,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  overflow-y: hidden;
-}
-
-.preload {
-  height: 100vh;
-  width: 100vw;
-  background: #4e4e4e;
-}
-
-.preload .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: white;
-  height: 48px;
-  width: 48px;
-}
-
-.preload .circle .load {
-  width: calc(100% - 0px);
-  height: calc(100% - 0px);
-  border: 8px solid #162534;
-  border-top: 8px solid #09f;
-  border-radius: 50%;
-  -webkit-animation: rotate 5s linear infinite;
-          animation: rotate 5s linear infinite;
-}
-
-@-webkit-keyframes rotate {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+  overflow-x: hidden;
 }
 
 header {
@@ -56,6 +17,32 @@ header {
   background-size: cover;
   height: 100vh;
   color: #ffffffcb;
+}
+
+header .navbar {
+  background: rgba(0, 0, 0, 0.527);
+  border-radius: 0% 0% 50% 0%;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  overflow: hidden;
+}
+
+header .navbar .nav_list {
+  position: relative;
+  left: 10%;
+  font-family: 'Montserrat', sans-serif;
+  margin: 120px 100px;
+  z-index: 101;
+}
+
+header .navbar .nav_list li {
+  font-size: 3rem;
+  z-index: 102;
 }
 
 header .burger {
@@ -137,7 +124,7 @@ header .first .vtx {
   position: relative;
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 550%;
+  font-size: 6.5em;
   top: 24%;
   width: 100%;
   z-index: 1;
@@ -161,6 +148,7 @@ header .first .intro2 {
   z-index: 200;
   right: 1vw;
   height: 27vh;
+  min-height: 200px;
   width: 25px;
   background-color: rgba(255, 255, 255, 0);
   overflow: hidden;
@@ -216,11 +204,13 @@ header .first .intro2 {
   background-repeat: no-repeat;
   background-position: right;
   overflow-x: hidden;
+  min-height: 600px;
 }
 
 .aboutme .about {
   width: 50%;
   height: 100vh;
+  min-height: 600px;
   position: relative;
   font-family: 'Raleway', sans-serif;
   color: #000000a4;
@@ -287,6 +277,7 @@ header .first .intro2 {
   font-size: 16px;
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .aboutme .about .butt_contain1 .butt:hover {
@@ -300,6 +291,7 @@ header .first .intro2 {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  min-height: 600px;
 }
 
 .skills .keyboard {
@@ -448,7 +440,7 @@ header .first .intro2 {
   font-size: 420%;
   color: #ffffffc0;
   border-left: 5px solid #eb0027e5;
-  width: 400px;
+  width: 350px;
   padding: 5px 12px;
   position: relative;
   left: 0;
@@ -478,11 +470,14 @@ header .first .intro2 {
       justify-content: space-around;
   -ms-flex-line-pack: distribute;
       align-content: space-around;
+  overflow-y: hidden;
+  min-height: 600px;
 }
 
 .Projects .card_container .contain1, .Projects .card_container .contain2, .Projects .card_container .contain3 {
   height: 450px;
   width: 350px;
+  overflow-y: hidden;
   -webkit-perspective: 500px;
           perspective: 500px;
   display: -webkit-box;
@@ -537,6 +532,7 @@ header .first .intro2 {
 }
 
 .Projects .card_container .contain1 .card1 .bottom, .Projects .card_container .contain1 .card2 .bottom, .Projects .card_container .contain1 .card3 .bottom, .Projects .card_container .contain2 .card1 .bottom, .Projects .card_container .contain2 .card2 .bottom, .Projects .card_container .contain2 .card3 .bottom, .Projects .card_container .contain3 .card1 .bottom, .Projects .card_container .contain3 .card2 .bottom, .Projects .card_container .contain3 .card3 .bottom {
+  overflow-y: hidden;
   height: 0%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -545,12 +541,14 @@ header .first .intro2 {
 
 .Contact {
   height: 100vh;
+  width: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.678)), to(rgba(0, 0, 0, 0.685))), url("../img/contact_bg.jpg");
   background-image: linear-gradient(rgba(0, 0, 0, 0.678), rgba(0, 0, 0, 0.685)), url("../img/contact_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   color: whitesmoke;
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
 .Contact .contact_title {
@@ -566,7 +564,7 @@ header .first .intro2 {
 }
 
 .Contact form {
-  margin: 60px;
+  margin: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -585,6 +583,8 @@ header .first .intro2 {
   -ms-flex-line-pack: distribute;
       align-content: space-around;
   height: 80vh;
+  min-height: 600px;
+  overflow-x: hidden;
 }
 
 .Contact form .name {
@@ -731,6 +731,7 @@ header .first .intro2 {
   font-size: 16px;
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
   cursor: pointer;
 }
 
@@ -746,8 +747,8 @@ header .first .intro2 {
   }
   .Projects .card_container .contain1:hover .bottom, .Projects .card_container .contain2:hover .bottom, .Projects .card_container .contain3:hover .bottom {
     height: 50%;
-    -webkit-transition: 0s;
-    transition: 0s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
   .Projects .card_container .contain1:hover .top, .Projects .card_container .contain2:hover .top, .Projects .card_container .contain3:hover .top {
     height: 50%;
@@ -890,6 +891,7 @@ header .first .intro2 {
   }
   .navigate {
     overflow: hidden;
+    top: 35%;
   }
   .aboutme {
     display: block;
