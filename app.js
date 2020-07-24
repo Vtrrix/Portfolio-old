@@ -87,6 +87,8 @@ window.addEventListener("load", () => {
     delay: 1000,
     easing: "easeInOutQuad",
   });
+  document.querySelector(".colorit").style.color = "#2005bb";
+  document.querySelector(".colorit").style.textShadow = "0px 0px 12px #2005bb";
 });
 
 //Background sphere animation

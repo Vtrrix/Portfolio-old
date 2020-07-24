@@ -268,8 +268,10 @@ body {
     transform: rotate(90deg);
   }
   .colorit {
-    color: $theme;
-    text-shadow: 0px 0px 12px $theme;
+    transition: 0.5s;
+    transition-delay: 2.8s;
+    // color: $theme;
+    // text-shadow: 0px 0px 12px $theme;
   }
   #top {
     min-width: 200vw;
