@@ -324,8 +324,10 @@ let inputClick = (ele) => {
   ele.children[1].style.borderBottom = "1px solid #3215d6";
 };
 let inputBlur = (ele) => {
-  ele.children[0].style.top = "15px";
-  ele.children[0].style.fontSize = "1rem";
+  if (!ele.children[1].value) {
+    ele.children[0].style.top = "15px";
+    ele.children[0].style.fontSize = "1rem";
+  }
   ele.children[0].style.color = "whitesmoke";
   ele.children[0].style.textShadow = "0px 0px 0px #000000";
   ele.children[1].style.borderBottom = "1px solid whitesmoke";
