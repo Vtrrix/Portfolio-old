@@ -1,3 +1,6 @@
+window.onload = () => {
+  document.querySelector(".loader").style.display = "none";
+};
 //----------------------Arrow navigation---------------------------------
 document.getElementsByClassName("right")[0].addEventListener("click", () => {
   window.scroll({
