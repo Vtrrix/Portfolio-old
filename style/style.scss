@@ -173,19 +173,22 @@ body {
         list-style-type: none;
         font-weight: 800;
         z-index: 101;
-        li {
-          font-size: 3rem;
-          padding: 10px;
-          z-index: 2;
-          cursor: pointer;
-          color: #ffffffcb;
+        a {
+          text-decoration: none;
+          li {
+            font-size: 3rem;
+            padding: 10px;
+            z-index: 2;
+            cursor: pointer;
+            color: #ffffffcb;
 
-          &:hover,
-          &:active {
-            font-size: 3.8rem;
-            transition: 0.2s;
-            color: $theme;
-            text-shadow: 0px 0px 12px $theme;
+            &:hover,
+            &:active {
+              font-size: 3.8rem;
+              transition: 0.2s;
+              color: $theme;
+              text-shadow: 0px 0px 12px $theme;
+            }
           }
         }
       }

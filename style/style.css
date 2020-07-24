@@ -168,7 +168,11 @@ body #burger #navbar .nav_list {
   z-index: 101;
 }
 
-body #burger #navbar .nav_list li {
+body #burger #navbar .nav_list a {
+  text-decoration: none;
+}
+
+body #burger #navbar .nav_list a li {
   font-size: 3rem;
   padding: 10px;
   z-index: 2;
@@ -176,7 +180,7 @@ body #burger #navbar .nav_list li {
   color: #ffffffcb;
 }
 
-body #burger #navbar .nav_list li:hover, body #burger #navbar .nav_list li:active {
+body #burger #navbar .nav_list a li:hover, body #burger #navbar .nav_list a li:active {
   font-size: 3.8rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
